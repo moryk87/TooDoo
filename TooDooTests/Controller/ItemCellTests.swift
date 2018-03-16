@@ -1,15 +1,15 @@
 //
-//  TooDooTests.swift
+//  ItemCellTests.swift
 //  TooDooTests
 //
-//  Created by Jan Moravek on 14/03/2018.
+//  Created by Jan Moravek on 16/03/2018.
 //  Copyright © 2018 Jan Moravek. All rights reserved.
 //
 
 import XCTest
 @testable import TooDoo
 
-class TooDooTests: XCTestCase {
+class ItemCellTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,19 @@ class TooDooTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+//    func test_
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+}
+
+extension ItemCellTests {
+    class FakeDataSource: NSObject, UITableViewDataSource {
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 1
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            return UITableViewCell()
         }
     }
-    
 }
